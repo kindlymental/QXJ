@@ -1,0 +1,40 @@
+/* components/project/grid_item/index.wxss */
+
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 218rpx;
+  box-shadow: 0 4rpx 10rpx 0 rgba(0, 0, 0, 0.09);
+  border-radius: 6rpx;
+}
+
+.container .image {
+  width: 218rpx;
+  height: 200rpx;
+}
+
+.container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content .project-h1 {
+  font-size: 28rpx;
+  color: #121212;
+  font-weight: 400;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 8rpx;
+  width: 190rpx;
+}
+
+.content .project-h2 {
+  margin: 6rpx auto;
+  font-family: Arial;
+  line-height: 34rpx;
+  font-size: 22rpx;
+  font-weight: 400;
+  color: #FD9E00;
+}

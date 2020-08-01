@@ -1,0 +1,8 @@
+<!--components/nav_header/index.wxml-->
+<view class="navbar" style="{{'height: ' + navigationBarHeight}}">
+  <view style="{{'height: ' + statusBarHeight}}"></view>
+  <view class='title-container'>
+    <view class='title title-left {{menuSelectedIndex==0 ? "title-selected":"title-normal"}}' bindtap="clickMenu" data-index='0'>{{text1}}</view>
+    <view class='title title-right {{menuSelectedIndex==1 ? "title-selected":"title-normal"}}' bindtap="clickMenu" data-index='1'>{{text2}}</view>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+<!--pages/me/worker/index.wxml-->
+<import src="../../../template/template-loading.wxml" />
+
+<view class="container">
+	<block wx:for='{{pageData.list}}' wx:key='index'>
+		<view class='ov scroll-item-recommend' id='{{item.orderNum}}' bindtap='toOrderDetail'>
+
+			<view class='recommend-con'>
+				<image class="projectImg" src="/assets/image/customer.png"></image>
+
+				<view class="recommend-center-view">
+					<view class="recommend-bottom" style="margin-top: 10rpx;">
+						<view class='recommend-name'>{{item.register_time}}</view>
+						<view class='recommend-age'>36岁</view>
+					</view>
+
+					<view class="recommend-bottom">
+						<text class='recommend-desc'>{{item.telephone}}</text>
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+
+	<template is="listNull" data="{{...pageData}}"></template>
+
+</view>

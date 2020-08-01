@@ -1,0 +1,172 @@
+<!--pages/category/service_detail/index.wxml-->
+<view class='project-detail'>
+	<view style='padding-bottom:100rpx'>
+
+		<view class='project-head'>
+			<view class="project-head-banners">
+				<swiper class="project-head-banners-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+					<block wx:for="{{service.pics}}" wx:key="index">
+						<swiper-item>
+							<image src="{{'http://qianxiaojiang.sosogo.site/' + item}}" class="slide-image" mode="widthFix" />
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
+
+			<view class="top-view">
+				<view class='money-view'>¥{{service.service_price}}</view>
+			</view>
+
+			<view class="top-view" style="margin-bottom: 28rpx;">
+				<view class='project-detail-h1'>{{service.title}}</view>
+				<view bindtap="toShare" class="share-view">分享</view>
+			</view>
+		</view>
+
+		<!-- 上门时间 -->
+		<view class="address-view" style="border-top: 16rpx solid #F6F7FB;" bindtap="chooseDatePicker">
+			<view class="address-title">上门时间</view>
+			<view class="address-right">
+				<text>{{showTime}}</text>
+			</view>
+		</view>
+
+		<!-- 选择地址 -->
+		<view class="address-view" style="padding-top: 0rpx;">
+			<view class="address-title">地址</view>
+			<view class="address-right" bindtap="chooseAddress">
+				<text>{{address!=null ? address.street : '请选择'}}</text>
+				<van-icon name="arrow" size="20px" />
+			</view>
+		</view>
+		<view class="address-view" style="border-top: 16rpx solid #F6F7FB;">
+			<view class="address-title">优惠券</view>
+			<view class="address-right" bindtap="chooseService">
+				<text>{{coupon_info!=null ? coupon_info.title + coupon_info.coupon_price : '请选择'}}</text>
+				<van-icon name="arrow" size="20px" />
+			</view>
+		</view>
+
+		<!-- 推荐 -->
+		<view class="recommend-view">
+			<view class="recommend-title">相似服务推荐</view>
+			<view class="project-list">
+				<block wx:for="{{projectList}}" wx:key="index">
+					<view class="item" bindtap="recommendEventHandle" id='{{item.id}}'>
+						<v-grid-item project='{{item}}' />
+					</view>
+				</block>
+			</view>
+		</view>
+
+		<view class='project-detail-bottom'>
+			<view class="icon_title_view">
+				<!-- 客服按钮 -->
+				<view class='icon_title' bindtap='toCustomer'>
+					<image src='/assets/image/customer.png'></image>
+					<text>客服</text>
+				</view>
+			</view>
+			<!-- 预约按钮 -->
+			<view class='payment' bindtap='toPayment'>立即购买</view>
+		</view>
+
+		<!-- 遮罩层
+		<view class="donation-mask" bindtap="maskClick" wx:if="{{maskHidden}}"></view>
+
+		<view class="square-time" wx:if="{{maskHidden}}">
+
+			<view class="toptitle">
+				<view class="toptitleleft">
+					<image src="http://qianxiaojiang.sosogo.site/IMG_20200609_180656.jpg" class="smallimg"></image>
+				</view>
+				<view class="toptitleright">
+					<view class="price">¥88.0</view>
+					<view class="subtitle">重量：不记重量 编号：2932728</view>
+				</view>
+			</view>
+
+			<view class="size">
+				<view>尺码</view>
+				<view style="overflow: auto;">
+					<view class="sizecontent">
+						<view wx:for="{{sizedata}}" wx:key="index" class="{{index == 0 ? 'sizeitemactive item':'sizeitem item'}}">
+							{{item}}
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="commonitem">
+				<view>数量</view>
+				<view style="display:flex">
+					<button class="countbtn">-</button>
+					<input class="countinput" value='1' />
+					<button class="countbtn">+</button>
+				</view>
+			</view>
+
+			<view class="commonitem">
+				<view>送装服务</view>
+				<view class="commonsmallsize">服务介绍</view>
+			</view>
+			<view class="commonsmallsize">以下服务必须一项</view>
+			<view class="commonitem">
+				<view class="itemborder">需要安装 ¥0.00</view>
+				<view class="itemborder">无需安装 ¥0.00</view>
+			</view>
+
+			<view class="size">
+				<view>保障服务</view>
+				<view class="commonitem">
+					<view class="cuxiao">促 促销特惠</view>
+					<view class="commonsmallsize">服务介绍</view>
+				</view>
+				<view class="commonitem">
+					<view class="itemborder">
+						<text>    三年上门修 ¥0.00 \n</text>
+						<text style="color:red;font-size:25rpx">免300元人工费</text>
+					</view>
+					<view class="itemborder"><text>    三年上门修 ¥0.00 \n</text>
+						<text style="color:red;font-size:25rpx">免300元人工费</text></view>
+				</view>
+				<view class="commonitem">
+					<view class="cuxiao">保 服务保障</view>
+					<view class="commonsmallsize">服务介绍</view>
+				</view>
+				<view class="commonitem">
+					<view class="itemborder">免费保6个月 加30元保一年</view>
+				</view>
+				
+				<view class="commonitem">
+					<view>乾小匠特色服务</view>
+					<view class="commonsmallsize">服务介绍</view>
+				</view>
+				<view class="commonitem">
+					<view class="itemborder">甲醛检测定金 ¥0.00</view>
+					<view class="itemborder">甲醛清除定金 ¥0.00</view>
+				</view>
+			</view>
+		</view> -->
+
+	</view>
+</view>
+
+<!-- 上门时间 -->
+<view class="datetime-picker-view" wx:if='{{datePicker}}'>
+	<van-datetime-picker 
+		type="date" 
+		value="{{ currentDate }}" 
+		min-date="{{ minDate }}"
+		formatter="{{ formatter }}"
+		bind:confirm="confirmDatePicker" 
+		bind:cancel="cancelDatePicker" 
+	/>
+</view>
+
+<!--确认支付按钮-->
+<!-- <view id="donationBtn" class="submit-button-item2" wx:if="{{maskHidden}}">
+	<view class="submit-pay-button" bindtap="createOrder">
+		确定
+	</view>
+</view> -->

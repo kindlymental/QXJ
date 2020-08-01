@@ -1,0 +1,15 @@
+<!--pages/me/phone/index.wxml-->
+
+<view class="panel">
+  <van-cell-group >
+    <van-cell title="绑定手机号"
+      label="可以使您更好的享受服务"
+      title-class="title"
+      label-class="label"
+    />
+    <van-cell title="手机" icon="phone-circle-o" />
+    
+    <van-cell title="验证码" icon="orders-o" />
+  </van-cell-group>
+</view>
+

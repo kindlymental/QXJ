@@ -1,0 +1,14 @@
+<view class='enter-container'>
+	<image src='../../assets/image/login.png'></image>
+
+	<view class='enter-slogan'>
+		<text class='slogan-left'>改善生活</text>
+		<text class='slogan-right'>提高品质</text>
+	</view>
+	<button class="enter-button" type='primary' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+
+	<van-popup show="{{ error }}" bind:ok="closeText" bind:cancel="closeText">
+		需要通过授权才能继续，请重新点击并授权
+	</van-popup>
+
+</view>

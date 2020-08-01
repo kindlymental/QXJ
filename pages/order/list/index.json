@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "v-nav-header": "/components/navbar/index",
+    "v-order-menu": "/components/order/menu/index",
+    "v-order-item": "/components/order/item/index"
+  },
+  "enablePullDownRefresh": true
+}

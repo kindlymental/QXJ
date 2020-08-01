@@ -1,0 +1,13 @@
+<!--components/project/grid_item/index.wxml-->
+<view bind:tap="onTap" class="container">
+
+	<image wx:if='{{project.pic}}' class="image" src='{{"http://qianxiaojiang.sosogo.site/" + project.pics[0]}}'></image>
+	<image wx:else class="image" src='{{"http://qianxiaojiang.sosogo.site/" + project.cover}}'></image>
+	<view class="content">
+		<view class='project-h1 ellipsis'>{{project.name ? project.name : project.title}}</view>
+		<view class="project-h2">
+			<text>¥</text>
+			<text style="font-size: 30rpx;">{{project.service_price || project.minPrice}}</text>
+		</view>
+	</view>
+</view>

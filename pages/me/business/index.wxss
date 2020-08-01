@@ -1,0 +1,44 @@
+/* pages/me/business/index.wxss */
+.panel{
+  background-color: #F6F7FB;
+}
+
+.content {
+  height: 120rpx;
+  padding-top: 30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  background: #fff;
+  border-bottom: 1rpx solid #D8D8D8;
+}
+
+.icon {
+  text-align: center;
+}
+
+.icon  image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+
+.info-name {
+  font-size: 17px;
+}
+
+.info-describe {
+  font-size: 12px;
+  color: #8F8F8F;
+}
+
+.btn {
+  width: 140rpx;
+  height: 60rpx;
+  font-size: 14px;
+  color: #FDAF4E;
+  line-height: 60rpx;
+  text-align: center;
+  border: 2rpx solid #FDAF4E;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+}

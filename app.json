@@ -1,0 +1,72 @@
+{
+	"pages": [
+		"pages/splash/index",
+		"pages/login/login",
+		"pages/index/index",
+		"pages/category/list/index",
+		"pages/category/detail/index",
+		"pages/category/search/index",
+		"pages/order/list/index",
+		"pages/order/detail/index",
+		"pages/order/update_state/index",
+		"pages/me/index",
+		"pages/me/discount/index",
+		"pages/me/collection/index",
+		"pages/me/address/index",
+		"pages/me/address/add",
+		"pages/me/info/index",
+		"pages/me/task/index",
+		"pages/me/phone/index",
+		"pages/me/business/index",
+		"pages/me/opinion/index",
+		"pages/me/member/member",
+		"pages/me/member/list",
+		"pages/category/service_detail/index",
+		"pages/me/worker/index"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "乾小匠",
+		"navigationBarTextStyle": "black"
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "我们将根据您的定位进行服务分类"
+		}
+	},
+	"usingComponents": {
+		"van-skeleton": "@vant/weapp/skeleton/index"
+	},
+	"sitemapLocation": "sitemap.json",
+	"tabBar": {
+		"color": "#BBBBBB",
+		"selectedColor": "#272727",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "assets/icon/tabbar_home.png",
+				"selectedIconPath": "assets/icon/tabbar_home_selected.png"
+			},
+			{
+				"pagePath": "pages/category/list/index",
+				"text": "分类",
+				"iconPath": "assets/icon/tabbar_category.png",
+				"selectedIconPath": "assets/icon/tabbar_category_selected.png"
+			},
+			{
+				"pagePath": "pages/order/list/index",
+				"text": "订单",
+				"iconPath": "assets/icon/tabbar_order.png",
+				"selectedIconPath": "assets/icon/tabbar_order_selected.png"
+			},
+			{
+				"pagePath": "pages/me/index",
+				"text": "我的",
+				"iconPath": "assets/icon/tabbar_me.png",
+				"selectedIconPath": "assets/icon/tabbar_me_selected.png"
+			}
+		]
+	}
+}

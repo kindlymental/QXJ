@@ -1,0 +1,85 @@
+/* pages/me/worker/index.wxss */
+
+page {
+  height: 100vh;
+  background: #F8F8F8;
+}
+
+.container {
+  
+}
+
+.scroll-item-recommend {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 15rpx 30rpx;
+  border-radius: 12rpx;
+}
+
+/** 中部 */
+.recommend-con {
+  display: flex;
+  margin: 25rpx 22rpx;
+}
+
+.recommend-con .projectImg {
+  width: 127rpx;
+  height: 127rpx;
+  border-radius: 127rpx;
+  margin: 0 18rpx 0 0;
+}
+
+.recommend-con .recommend-center-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+
+.recommend-bottom {
+  margin-top: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recommend-bottom .recommend-name {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+}
+
+.recommend-bottom .recommend-age {
+  color: #FF973B;
+  font-size: 22rpx;
+}
+
+/* 时间 */
+.recommend-bottom .recommend-desc {
+  font-size: 26rpx;
+  color: #8C8C8C;
+  font-weight: 400;
+}
+
+/** 底部 */
+
+.recomment-button {
+  width: 152rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  border-radius: 25rpx;
+  text-align: center;
+  margin-left: 14rpx;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.recommen-button-color {
+  color: #FD9E00;
+  border: 1rpx solid #FD9E00;
+}
+

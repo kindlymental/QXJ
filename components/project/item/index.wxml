@@ -1,0 +1,21 @@
+<!--components/project/item/index.wxml-->
+
+<view bind:tap="onTap" class="item-container">
+  <view class="content">
+    <view class='project-h1 ellipsis'>{{project.name ? project.name : project.title}}</view>
+    <view class='project-h2 ellipsis_multi_line'>{{project.desc ? project.desc : project.description}}</view>
+    <view class="content-h3">
+      <view class='project-h3'>
+        <text>¥</text>
+        <text style="font-size: 36rpx">{{project.originalPrice ? project.originalPrice/100 : project.service_price/100}}</text>
+      </view>
+      <view class="amount-view" wx:if='{{project.stores!=null}}'>
+        <text class='project-h4'>库存{{project.stores}}</text>
+      </view>
+    </view>
+  </view>
+
+  <image wx:if='{{project.pics}}' src="{{'http://qianxiaojiang.sosogo.site/' + project.pics[0]}}" />
+  <image wx:else src="{{'http://qianxiaojiang.sosogo.site/' + project.cover}}" />
+
+</view>

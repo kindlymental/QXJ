@@ -1,0 +1,32 @@
+
+<view class="panel"> 
+
+  <van-row>
+    <van-col span="4" offset="1" custom-class="avatar-info info-text">头像</van-col>
+    <van-col span="8" offset="11" class="avatar-img">
+      <image src="{{user.avatarUrl}}"></image>
+    </van-col>
+  </van-row>
+
+  <van-row custom-class="avatar">
+    <van-col span="4" offset="1" class="avatar-info">昵称</van-col>
+    <van-col span="8" offset="11" class="avatar-desc">
+      {{user.nickName}}
+    </van-col>
+  </van-row>
+
+  <van-row custom-class="avatar">
+    <van-col span="4" offset="1" class="avatar-info">性别</van-col>
+    <van-col span="8" offset="11" class="avatar-desc">
+      {{user.gender==2?'女':user.gender==1?'男':'未知'}}
+    </van-col>
+  </van-row>
+
+  <van-row custom-class="avatar">
+    <van-col span="4" offset="1" class="avatar-info">I    D</van-col>
+    <van-col span="8" offset="11" class="avatar-desc">
+      {{user.user_id}}
+    </van-col>
+  </van-row>
+</view>
+

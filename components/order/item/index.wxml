@@ -1,0 +1,56 @@
+<!--components/order/item/index.wxml-->
+
+<view class='scroll-item-recommend' data-ordernum='{{item.orderNum}}' bindtap='toOrderDetail'>
+	<view class='recommend-top'>
+		<view class='recommend-order'>{{item.service_info.title}}</view>
+		<view class='recommend-state'>{{item.statusStr}}</view>
+	</view>
+	<view class='recommend-con'>
+		<image 
+			wx:if="{{orderType==0}}"
+			class="projectImg" 
+			src="{{'http://qianxiaojiang.sosogo.site/' + item.goods_info.pics[0]}}"
+			mode="aspectFill"
+		></image>
+		<image 
+			wx:else
+			class="projectImg" 
+			src="{{'http://qianxiaojiang.sosogo.site/' + item.service_info.cover}}"
+			mode="aspectFill"
+		></image>
+		<view>
+			<view class="recommend-con-main">
+				<view wx:if="{{orderType==0}}" class='ellipsis_multi_line recommend-name'>{{item.goods_info.name}}</view>
+				<view wx:else class='ellipsis_multi_line recommend-name'>{{item.service_info.description}}</view>
+				<view class='recommend-money'>
+					<text style="font-size: 24rpx;">￥</text>
+					<text>{{item.total_price}}</text>
+					<view class="buy_num">x{{item.buy_count}}</view>
+				</view>
+			</view>
+			<view class="bottom-info">
+				<text style="font-size: 22rpx; color:#010101;">总价¥{{item.total_price}}，优惠¥0.00，实付款¥</text>
+				<text style="font-size: 30rpx;">{{item.total_price}}</text>
+			</view>
+		</view>
+	</view>
+	<view class='recomment-bottom'>
+		<view
+			class='recomment-button fr recommen-button-tint-color' 
+			catchtap='toLogistics' 
+			data-text='{{item.service_order_id}}' 
+			data-index='{{index}}'
+			wx:if='{{item.status == 2 || item.status == 3 || item.status == 8}}'
+		>
+			查看物流
+		</view>
+		<view 
+			class='recomment-button fr recommen-button-deep-color' 
+			catchtap='toConfirm' 
+			data-index='{{index}}'
+			wx:if='{{item.status == 3 || item.status == 8}}'
+		>	
+			确认收货
+		</view>
+	</view>
+</view>

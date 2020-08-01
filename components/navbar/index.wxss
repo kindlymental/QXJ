@@ -1,0 +1,49 @@
+/* components/nav_header/index.wxss */
+.navbar {
+  width: 100%;
+  background-color: white;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.title-container {
+  position: absolute;
+  bottom: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  height: 66rpx;
+  line-height: 66rpx;
+  width: 180rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.title-left {
+  border-top-left-radius: 33rpx;
+  border-bottom-left-radius: 33rpx;
+}
+
+.title-right {
+  border-top-right-radius: 33rpx;
+  border-bottom-right-radius: 33rpx;
+}
+
+.title-normal {
+  background-color: white;
+  color: #FD9E00;
+  border: 1rpx solid #FD9E00;
+}
+
+.title-selected {
+  background-color: #FD9E00;
+  color: white;
+  border: 1rpx solid #FD9E00;
+}

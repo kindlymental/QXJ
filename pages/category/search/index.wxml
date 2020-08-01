@@ -1,0 +1,56 @@
+<!--pages/category/list/index.wxml-->
+
+<import src="../../../template/template-loading.wxml" />
+
+<view class="container">
+	<view class="container_search">
+		<van-search
+			value="{{keyword}}"
+			placeholder="请输入搜索关键词"
+			show-action
+			bind:search="onSearch"
+			bind:cancel="onCancel"
+			bind:change="onChange"
+		/>
+	</view>
+	<view class="container_main" wx:if="{{showresult}}">
+		<van-tabs active="{{active}}" bind:change="onChangeTab">
+			<van-tab title="默认排序">
+				<scroll-view scroll-y class="project-list">
+					<block wx:for='{{projectPageData}}' wx:key='index'>
+						<view id='{{item.goods_id ? item.goods_id : item.service_id}}' data-index='{{index}}' bindtap="eventHandle" class="project-item">
+							<v-project project='{{item}}' />
+						</view>
+					</block>
+				</scroll-view>
+			</van-tab>
+			<van-tab title="商品">
+				<scroll-view scroll-y class="project-list">
+					<block wx:for='{{projectPageData}}' wx:key='index'>
+						<view id='{{item.goods_id ? item.goods_id : item.service_id}}' data-index='{{index}}' bindtap="eventHandle" class="project-item">
+							<v-project project='{{item}}' />
+						</view>
+					</block>
+				</scroll-view>
+			</van-tab>
+			<van-tab title="服务">
+				<scroll-view scroll-y class="project-list">
+					<block wx:for='{{projectPageData}}' wx:key='index'>
+						<view id='{{item.goods_id ? item.goods_id : item.service_id}}' data-index='{{index}}' bindtap="eventHandle" class="project-item">
+							<v-project project='{{item}}' />
+						</view>
+					</block>
+				</scroll-view>
+			</van-tab>
+		</van-tabs>
+	</view>
+	<view class="container_content" wx:else>
+		<view class="container_content_title">大家都在搜</view>
+		<view class="container_content_searchlist clearfix">
+			<block wx:for="{{searchList}}" wx:key="index">
+				<view class="container_content_searchlist_item" data-name='{{item}}' bindtap="quicksearch">{{item}}</view>
+			</block>
+		</view>
+	</view>
+	<template is="listNull" data="{{...projectPageData}}"></template>
+</view>

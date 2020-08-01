@@ -1,0 +1,14 @@
+<!--pages/splash/index.wxml-->
+<view class='enter-container'>
+	<view class="image-view">
+		<image src='../../assets/image/splash.png'></image>
+	</view>
+
+	<text class='slogan-title'>乾小匠</text>
+
+	<view class='enter-slogan'>
+		<text class='slogan-left'>改善生活</text>
+		<text class='slogan-right'>提高品质</text>
+	</view>
+
+</view>

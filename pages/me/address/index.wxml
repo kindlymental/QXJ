@@ -1,0 +1,41 @@
+<!--pages/address/list/index.wxml-->
+
+<!-- wxs脚本 -->
+<wxs module="util">
+    var sub = function(val) {
+			if (val) {
+				return val.substring(0, 1)
+			}
+      return null;
+    }
+    module.exports.sub = sub;
+</wxs>
+
+<view class='addressList-list'>
+	<block wx:for='{{pageData.list}}' wx:key='index'>
+
+		<view class='address-list-item' catchtap='subAddress' data-index="{{index}}">
+
+			<view class="left-view">{{util.sub(item.contact)}}</view>
+
+			<view class="center-view">
+				<view class="top-view" >
+					<view>{{item.contact}}</view>
+					<view class="phone-num">{{item.telephone}}</view>
+					<view wx:if='{{item.is_default==true}}' class="default">默认</view>
+				</view>
+				<view class='list-item-address'>{{item.addrname}} {{item.street}}</view>
+			</view>
+
+			<view class='choose-address'>
+				<view class="line"></view>
+				<text id='{{item.address_id}}' data-index='{{index}}' catchtap='toEditAddress'>编辑</text>
+			</view>
+
+		</view>
+	</block>
+</view>
+
+<view class="address-add-view">
+	<button class='address-add' bindtap='toNewAddress'>添加新地址</button>
+</view>

@@ -1,0 +1,11 @@
+<view class="member_list">
+	<block wx:for="{{list}}" wx:key="index">
+		<view class="member_list_item" data-index="{{item.service_package_id}}" bindtap="toMemberDetail">
+			<image src="../../../assets/image/member/member_bg.png" class="member_list_item_bg" />
+			<view class="member_list_item_main">
+				<view class="member_list_item_main_title">{{item.title}}</view>
+				<view class="member_list_item_main_desc">{{item.desc}}</view>
+			</view>
+		</view>
+	</block>
+</view>

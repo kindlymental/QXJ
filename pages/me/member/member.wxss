@@ -1,0 +1,234 @@
+page {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.bg {
+	z-index: 99;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.bgimage {
+	width: 100%;
+	height: 100%;
+}
+
+.main-view {
+	z-index: 100;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.supreme-member {
+	margin-top: 14vh;
+	width: 100%;
+	padding-left: 9vw;
+}
+
+.member-top-view {
+	display: flex;
+	align-items: center;
+}
+
+.crownimg {
+	height: 86rpx;
+	width: 99rpx;
+}
+
+.supertext {
+	margin-left: 10rpx;
+	font-size: 40rpx;
+	color: #D7975D;
+	font-weight: 500;
+}
+
+.subtitle {
+	color: #D29F6D;
+	font-size: 30rpx;
+	font-weight: 400;
+	margin-left: 10rpx;
+}
+
+.tableone {
+	margin: 7vh 5vw 2vh 5vw;
+	background: #423D41;
+	display: flex;
+	flex-direction: column;
+	padding: 0 26rpx;
+	border-radius: 8rpx;
+	border: 1px solid rgba(191, 170, 155, 1);
+}
+
+/** 有效期限 支付金额 */
+.tableonerow {
+	display: flex;
+	justify-content: space-between;
+	height: 40rpx;
+	line-height: 40rpx;
+	padding: 25rpx 0 30rpx 0;
+}
+
+.row-line {
+	height: 1rpx;
+	border-bottom: 1px solid rgb(165, 148, 134);
+}
+
+.fontsmall {
+	color: #957E6A;
+	font-size: 28rpx;
+}
+
+.fontmid {
+	color: #D29F6D;
+	font-size: 30rpx;
+}
+
+.pendant {
+	height: 50rpx;
+	width: 28rpx;
+}
+
+.twopendant {
+	position: relative;
+	top: -30rpx;
+	width: 100%;
+	height: 30rpx;
+	display: flex;
+	justify-content: space-between;
+}
+
+/** 支付方式 */
+.tabletwo {
+	margin: 0 5vw 1vh 5vw;
+	background: #423D41;
+	display: flex;
+	flex-direction: column;
+	padding: 1.5vh 3vw;
+	border-radius: 8rpx;
+	border: 1px solid rgba(191, 170, 155, 1);
+}
+
+.choosetext {
+	color: #DDA46C;
+	font-size: 32rpx;
+}
+
+.paytype {
+	font-size: 30rpx;
+	color: #D29F6D;
+	margin-left: 30rpx;
+}
+
+.wechatimg {
+	height: 49rpx;
+	width: 49rpx;
+}
+
+.midcontent {
+	display: flex;
+	align-items: center;
+	padding: 30rpx 20rpx;
+}
+
+.bot-view {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.submit {
+	margin-top: 40rpx;
+	width: 478rpx;
+	border-radius: 36rpx;
+	background: #FFA030;
+	color: #fff;
+	text-align: center;
+	font-size: 30rpx;
+	height: 72rpx;
+	line-height: 72rpx;
+}
+
+
+/** 服务次数 */
+.tablethree {
+	margin: 2vh 5vw;
+	background: #423D41;
+	display: flex;
+	flex-direction: column;
+	padding: 1.5vh 3vw 0 3vw;
+	border-radius: 8rpx;
+	border: 1px solid rgba(191, 170, 155, 1);
+}
+
+.line {
+	width: 10rpx;
+	height: 28rpx;
+	background: linear-gradient(180deg, rgba(233, 207, 171, 1) 0%, rgba(205, 156, 107, 1) 100%);
+	border-radius: 5rpx;
+	margin-right: 19rpx;
+}
+
+.time-bg-view {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	padding: 20rpx 20rpx 10rpx 20rpx;
+}
+
+.time-view {
+	width: 120rpx;
+	line-height: 57rpx;
+	height: 57rpx;
+	border-radius: 5rpx;
+	border: 1px solid rgba(211, 167, 121, 1);
+	font-size: 30rpx;
+	font-family: PingFangSC-Regular, PingFang SC;
+	font-weight: 400;
+	text-align: center;
+	margin-right: 23rpx;
+	margin-bottom: 18rpx;
+}
+
+.time-view-selected {
+	background: rgba(211, 167, 121, 1);
+	color: #423D41;
+}
+.time-view-normal {
+	background: transparent;
+	color: rgba(211, 167, 121, 1);
+}
+
+/** 地址展示 */
+.tablefour {
+	margin: 2vh 5vw;
+	background: #423D41;
+	display: flex;
+	align-items: center;
+	padding: 1.5vh 3vw;
+	border-radius: 8rpx;
+	border: 1px solid rgba(191, 170, 155, 1);
+}
+
+.tablefour .address {
+	width: 87rpx;
+	height: 87rpx;
+}
+
+.tablefour .address-title {
+	display: flex;
+	align-items: center;
+	margin-left: 30rpx;
+	margin-bottom: 10rpx;
+}
+
+/* common css */
+.ds_flex {
+	display: flex;
+	align-items: center;
+}

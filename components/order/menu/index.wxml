@@ -1,0 +1,9 @@
+<!--components/order/menu/index.wxml-->
+<!-- 菜单 -->
+<view class="menu-container">
+  <block wx:for='{{menuList}}' wx:key='index'>
+    <view class="menu-view" bindtap="clickChangeMenu" data-index='{{index}}' data-id="{{item.id}}">
+      <text class="{{menuSelectedIndex==index ? 'text_selected':'text_normal'}}">{{item.name}}</text>
+    </view>
+  </block>
+</view>

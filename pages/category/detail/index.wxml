@@ -1,0 +1,232 @@
+<!--pages/category/detail/index.wxml-->
+<view class='project-detail'>
+	<view style='padding-bottom:100rpx'>
+
+		<view class='project-head'>
+			<!-- <image src='{{projectDetail.img}}'></image> -->
+			<view class="project-head-banners">
+				<swiper 
+					class="project-head-banners-swiper"
+					indicator-dots="{{indicatorDots}}" 
+					autoplay="{{autoplay}}" 
+					interval="{{interval}}" 
+					duration="{{duration}}">
+					<block wx:for="{{projectDetail.pics}}" wx:key="index">
+						<swiper-item>
+							<image src="{{'http://qianxiaojiang.sosogo.site/' + item}}" class="slide-image" mode="aspectFill"/>
+						</swiper-item>
+					</block>
+				</swiper>
+			</view>
+			<view class="top-view">
+				<view class='money-view'>¥{{projectDetail.minPrice}}</view>
+				<view class="project-detail-h2">月销{{projectDetail.sell_count}}</view>
+			</view>
+			<view class="top-view" style="margin-bottom: 28rpx;">
+				<view class='project-detail-h1'>{{projectDetail.name}}</view>
+				<view bindtap="toShare" class="share-view">分享</view>
+			</view>
+		</view>
+
+		<!-- 发货 -->
+		<view class="address-view" style="border-top: 16rpx solid #F6F7FB;">
+			<view class="address-title">发货</view>
+			<view class="address-right">
+				<text>24:00前付款,预计2-3日送达\n重量{{projectDetail.weight}}kg | 满88包邮</text>
+			</view>
+		</view>
+
+		<!-- 选择地址 -->
+		<view class="address-view">
+			<view class="address-title">地址</view>
+			<view class="address-right" bindtap="chooseAddress">
+				<text>{{address!=null ? address.addrname + address.street : '请选择'}}</text>
+				<van-icon name="arrow" size="20px" />
+			</view>
+		</view>
+
+		<!-- 安装服务 -->
+		<view class="address-view" style="border-top: 16rpx solid #F6F7FB;">
+			<view class="address-title">优惠券</view>
+			<view class="address-right" bindtap="chooseService">
+				<text>{{coupon_info!=null ? coupon_info.title + coupon_info.coupon_price : '请选择'}}</text>
+				<van-icon name="arrow" size="20px" />
+			</view>
+		</view>
+
+		<!-- 推荐 -->
+		<view class="recommend-view">
+			<view class="recommend-title">相似商品推荐</view>
+			<view class="project-list">
+				<block wx:for="{{projectList}}" wx:key="index">
+					<view class="item" bindtap="recommendEventHandle" id='{{item.id}}'>
+						<v-grid-item project='{{item}}' />
+					</view>
+				</block>
+			</view>
+		</view>
+
+		<view class='project-detail-bottom'>
+			<view class="icon_title_view">
+				<!-- 客服按钮 -->
+				<view class='icon_title' bindtap='toCustomer'>
+					<image src='/assets/image/customer.png'></image>
+					<text>客服</text>
+				</view>
+				<!-- 收藏按钮 -->
+				<view class='icon_title' bindtap='toCollection' style="margin-left: 70rpx;">
+					<image src='/assets/image/collection.png'></image>
+					<text>收藏</text>
+				</view>
+			</view>
+			<!-- 预约按钮 -->
+			<view class='payment' bindtap='toPayment'>立即购买</view>
+		</view>
+	</view>
+	<van-action-sheet
+		bind:close="onClose"
+		show="{{ show }}"
+	>
+		<view class="shadow_view">
+			<view class="shadow_view_goods">
+				<image
+					src="{{'http://qianxiaojiang.sosogo.site/' + projectDetailImg}}"
+					class="shadow_view_goods_img"
+					mode="aspectFill"
+				/>
+				<view class="shadow_view_goods_main">
+					<view class="shadow_view_goods_main_price">
+						<text>¥</text>{{projectDetail.minPrice}}
+					</view>
+					<view class="shadow_view_goods_main_tip">
+						重量：{{projectDetail.weight}}    编号：{{projectDetail.goods_id}}
+					</view>
+				</view>
+			</view>
+			<view class="shadow_view_section">
+				<view class="shadow_view_section_title">
+					<view class="shadow_view_section_title_label">尺码</view>
+				</view>
+				<view class="shadow_view_section_size clearfix">
+					<block wx:for="{{spec_info.sizes}}" wx:key="index">
+						<view 
+							class="shadow_view_section_size_item {{size_index == index ? 'active' : ''}}" 
+							data-item="{{item}} " 
+							data-index="{{index}}" 
+							bindtap='chooseSize'
+						>
+							{{item}}
+						</view>
+					</block>
+				</view>
+			</view>
+			<view class="shadow_view_section">
+				<view class="shadow_view_section_title">
+					<view class="shadow_view_section_title_label">颜色</view>
+				</view>
+				<view class="shadow_view_section_size clearfix">
+					<block wx:for="{{spec_info.specs}}" wx:key="index">
+						<view 
+							class="shadow_view_section_size_item {{spec == item.spec ? 'active' : ''}}" 
+							data-index="{{item.spec}}" 
+							bindtap='chooseSpecs'
+						>
+							{{item.spec}}
+						</view>
+					</block>
+				</view>
+			</view>
+			<view class="shadow_view_section">
+				<view class="shadow_view_section_title">
+					<view class="shadow_view_section_title_label">数量</view>
+					<view class="shadow_view_section_num">
+						<view class="shadow_view_section_num_min" bindtap='minCount'>-</view>
+						<input class="weui-input" bindinput="changCount" type="number" value="{{buy_count}}"/>
+						<view class="shadow_view_section_num_add" bindtap='addCount'>+</view>
+					</view>
+				</view>
+
+			</view>
+			<view class="shadow_view_section">
+				<view class="shadow_view_section_title">
+					<view class="shadow_view_section_title_label">送装服务</view>
+				</view>
+				<view class="shadow_view_section_tips">以下服务必选一项</view>
+				<view class="shadow_view_section_operates">
+					<view
+						class="shadow_view_section_operates_item {{install_type == 0 ? 'active' : ''}}" 
+						data-index="0" 
+						bindtap='chooseOperate'
+					>
+						需要安装  ¥{{install_info.price}}
+					</view>
+					<view
+						class="shadow_view_section_operates_item {{install_type == 1 ? 'active' : ''}}" 
+						data-index="1" 
+						bindtap='chooseOperate'
+					>
+						无需安装  ¥0.00
+					</view>
+				</view>
+			</view>
+			<view class="shadow_view_section" wx:if="{{package_info.promotion.length>0 || (package_info.security && package_info.security.security_id)}}">
+				<view class="shadow_view_section_title">
+					<view class="shadow_view_section_title_label">保障服务</view>
+				</view>
+				<view class="shadow_view_section_service">
+					<view class="shadow_view_section_service_item" wx:if="{{package_info.promotion.length>0}}">
+						<view class="shadow_view_section_service_item_tip">
+							<image src="../../../assets/image/cu.png" ></image>促销特惠
+						</view>
+						<view class="clearfix shadow_view_section_service_item_main">
+							<block wx:for="{{package_info.promotion}}" wx:key="index">
+								<view 
+									class="shadow_view_section_service_item_main_content {{item.promotion_id == promotion_id ? 'active' : ''}}" 
+									data-index="{{item.promotion_id}}" 
+									bindtap='choosePromotion'>
+									<view class="shadow_view_section_service_item_main_content_warranty">{{item.warranty}}年上门修  ¥0.00</view>
+									<view class="shadow_view_section_service_item_main_content_desc">{{item.desc}}</view>
+								</view>
+							</block>
+						</view>
+					</view>
+					<view class="shadow_view_section_service_item" wx:if="{{package_info.security && package_info.security.security_id}}">
+						<view class="shadow_view_section_service_item_tip">
+							<image src="../../../assets/image/bao.png" ></image>服务保障
+						</view>
+						<view class="shadow_view_section_special clearfix">
+							<view 
+								bindtap='chooseSecurity'
+								class="shadow_view_section_special_item {{package_info.security.security_id == security_id ? 'active' : ''}}" 
+								data-index="{{package_info.security.security_id}}"
+								data-price="{{package_info.security.service_price}}"
+							>
+								免费保6个月 加{{package_info.security.service_price}}元保一年
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="shadow_view_section" xw:v-if="{{package_info.special_service && package_info.special_service.length > 0}}">
+				<view class="shadow_view_section_title">
+					<view class="shadow_view_section_title_label">乾小匠特色服务</view>
+				</view>
+				<view class="shadow_view_section_special clearfix">
+					<block wx:for="{{package_info.special_service}}" wx:key="index">
+						<view
+							data-index="{{item.special_service_id}}" 
+							data-price="{{item.special_price}}"
+							bindtap='chooseSpecialService'
+							class="shadow_view_section_special_item {{item.special_service_id == special_id ? 'active' : ''}}"
+						>
+							{{item.content}} ¥{{item.special_price}}
+						</view>
+					</block>
+				</view>
+			</view>
+			<view class="shadow_view_footer">
+				<view class="shadow_view_footer_operate" bindtap="createOrder">确定</view>
+			</view>
+		</view>
+	</van-action-sheet>
+</view>

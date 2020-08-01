@@ -1,0 +1,62 @@
+/* pages/category/list/index.wxss */
+page {
+	background: #F6F7FB;
+}
+.clearfix {
+	zoom: 1;
+	clear: both;
+} 
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: '';
+	visibility: hidden;
+	height: 0;
+}
+.container {
+	background: #fff;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	border-top: 1rpx solid #E7E7E7;
+}
+.container_search {
+	width: 100vw;
+}
+.container_main {
+	padding: 40rpx 61rpx 0 61rpx;
+}
+.container_content {
+	padding: 40rpx 36rpx 0 36rpx;
+}
+.container_content_title {
+	height: 48rpx;
+	font-size: 34rpx;
+	font-family: PingFangSC-Regular,PingFang SC;
+	font-weight: 400;
+	color: rgba(0,0,0,1);
+	line-height: 48rpx;
+	margin-bottom: 18rpx;
+}
+.container_content_searchlist_item {
+	float: left;
+	margin-right: 15rpx;
+	height: 54rpx;
+	background: rgba(236,236,236,1);
+	border-radius: 38rpx;
+	-moz-border-radius: 38rpx;
+	-webkit-border-radius: 38rpx;
+	padding: 0 22rpx;
+	line-height: 54rpx;
+	font-size: 26rpx;
+	font-family: PingFangSC-Regular,PingFang SC;
+	font-weight: 400;
+	color: rgba(181,182,185,1);
+	margin-bottom: 15rpx;
+}
+.project-list {
+	flex: 1;
+}
+.project-item {
+	border-bottom: 1rpx solid rgb(231, 228, 228);
+}

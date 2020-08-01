@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "v-order-detail": "/components/order/detail/index",
+    "v-grid-item": "/components/project/grid_item/index"
+  },
+  "navigationBarTitleText": "订单详情",
+  "enablePullDownRefresh": true
+}

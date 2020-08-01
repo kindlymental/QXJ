@@ -1,0 +1,38 @@
+/* pages/me/collection/index.wxss */
+.content{ 
+  height: 100vh;
+  background: #fff;
+}
+.card {
+  background: #fff !important;
+  height: 240rpx;
+}
+.van-card__thumb{
+  margin-right:100rpx !important;
+}
+
+.card-thumb{
+  width:240rpx !important;
+  height: 210rpx !important;
+}
+.van-card__content{
+  top:20rpx;
+}
+.card-title{
+  font-size:15px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:#000000 !important;
+}
+
+.card-desc{
+  font-size:12px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color:#BDBAB8 !important;
+}
+
+.card-price{
+  color:#FD9E00!important;
+  font-size: 12px !important;
+}

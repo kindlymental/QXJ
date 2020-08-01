@@ -1,0 +1,93 @@
+	<view class="member-container">
+		<view class="bg">
+			<image src="../../../assets/image/member/memberbg.png" class="bgimage" mode="scaleToFill"></image>
+		</view>
+
+		<view class="main-view">
+			<view class="supreme-member">
+				<view class="member-top-view">
+					<image src="../../../assets/image/member/crown.png" class="crownimg"></image>
+					<view class="supertext">购买套餐</view>
+				</view>
+				<view class="subtitle">会员专属福利、保障、服务</view>
+			</view>
+
+			<view class="tableone">
+				<view class="twopendant">
+					<view>
+						<image src="../../../assets/image/member/pendant.png" class="pendant"></image>
+					</view>
+					<view>
+						<image src="../../../assets/image/member/pendant.png" class="pendant"></image>
+					</view>
+				</view>
+
+				<view class="tableonerow">
+					<view class="fontsmall">有效期限</view>
+					<view class="fontmid"> {{startTime}} 至 {{endTime}}</view>
+				</view>
+				<view class="row-line"></view>
+				<view class="tableonerow">
+					<view class="fontsmall">支付金额</view>
+					<view class="fontmid">¥{{payAmount}}</view>
+				</view>
+			</view>
+
+
+			<!-- 选择地址 -->
+			<view class="tablefour">
+				<view>
+					<image src="../../../assets/image/member/address.png" class="address"></image>
+				</view>
+				<view wx:if='{{address!=null}}'>
+					<view class="address-title">
+						<view class="choosetext">{{address.contact}}</view>
+						<view class="choosetext" style="margin-left:10rpx;">{{address.telephone}}</view>
+					</view>
+					<view class="paytype">{{address.addrname + address.street}}</view>
+				</view>
+				<view wx:else>
+					<view class="address-title" bindtap="chooseAddress">
+						<view class="choosetext">选择地址</view>
+					</view>
+				</view>
+			</view>
+
+			<!-- 服务次数 -->
+			<view class="tablethree">
+				<view class="ds_flex">
+					<view class="line"></view>
+					<view class="choosetext">选择每月服务次数</view>
+				</view>
+				<view class="time-bg-view">
+					<block wx:for='{{serviceTimes}}' wx:key='index'>
+						<view class="time-view {{chooseServiceTimesIndex==index ? 'time-view-selected' : 'time-view-normal'}}" bindtap="chooseServiceTime" data-index='{{index}}'>{{item}}</view>
+					</block>
+				</view>
+			</view>
+
+			<!-- 支付方式 -->
+			<view class="tabletwo">
+				<view class="ds_flex">
+					<view class="line"></view>
+					<view class="choosetext">选择支付方式</view>
+				</view>
+				<view class="midcontent">
+					<view>
+						<image src="../../../assets/image/member/wechat.png" class="wechatimg"></image>
+					</view>
+					<view class="paytype">微信支付</view>
+				</view>
+
+				<view class="bot-view">
+					<view style="text-align:center">
+						<text style="font-size:26rpx;color:#957E6A">已阅读并同意</text>
+						<text style="font-size:26rpx;color:#D29F6D">《乾小匠会员协议》</text></view>
+					<view class="submit">
+						确认支付
+					</view>
+				</view>
+			</view>
+
+		</view>
+	</view>

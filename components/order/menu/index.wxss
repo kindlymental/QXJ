@@ -1,0 +1,29 @@
+/* components/order/menu/index.wxss */
+
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  left: 32rpx;
+  right: 32rpx;
+  background-color: #F6F7FB;
+  z-index: 99;
+}
+
+.menu-container .menu-view {
+  margin: 22rpx 16rpx 16rpx 16rpx;
+  text-align: center;
+}
+
+.menu-container .menu-view .text_selected {
+  padding: 12rpx 0;
+  border-bottom: 4rpx solid #FD9E00;
+  color: #FD9E00;
+  font-size: 26rpx;
+}
+
+.menu-container .menu-view .text_normal {
+  padding: 12rpx 0;
+  font-size: 26rpx;
+  color: #ACACAC;
+}

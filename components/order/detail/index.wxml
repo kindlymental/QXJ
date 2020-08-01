@@ -1,0 +1,117 @@
+<!--components/order/detail/index.wxml-->
+
+<!-- 订单信息 -->
+<view class='order-detail-view'>
+
+	<!-- 用户信息 -->
+	<view class="user-view">
+		<image src="/assets/image/rider.png"></image>
+		<view class="right-view">
+			<view class="user-name-view">
+				<view class="content">{{orderInfo.address_info.username}}</view>
+				<view class="content" style="color:#BDBAB8; margin-left:18rpx;">{{orderInfo.address_info.telephone}}</view>
+			</view>
+			<view class="user-address-view">{{orderInfo.address_info.addrname}}{{orderInfo.address_info.street}}</view>
+		</view>
+	</view>
+
+	<!-- 项目信息 -->
+	<view class="payment-view" wx:if="{{orderType == 0}}">
+		<view class="name-view">
+			<view>{{orderInfo.goods_info.name}}</view>
+			<van-icon name="arrow" size="15px" color="#CFCFCF" />
+		</view>
+		<view class="center-view">
+			<view class="image-view">
+				<image src="{{'http://qianxiaojiang.sosogo.site/' + orderInfo.goods_info.pics[0]}}"></image>
+			</view>
+			<view class="right-view">
+				<view class='top-view'>
+					<view style="flex: 1">{{orderInfo.goods_info.desc}}</view>
+					<view class="prices">￥{{orderInfo.goods_info.minPrice}}</view>
+				</view>
+				<view class="bottom-view">
+					<view class='spec'>{{orderInfo.spec}};{{orderInfo.size}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="project-view">
+			<view class="title-view">
+				<view class="left">商品总价</view>
+				<view class="right">¥{{orderInfo.total_price}}</view>
+			</view>
+			<view class="title-view">
+				<view class="left">实付款</view>
+				<view class="right" style="color: #FD9E00;">¥{{orderInfo.amount/100 || 0}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="payment-view" wx:else>
+		<view class="name-view">
+			<view>{{orderInfo.service_info.title}}</view>
+			<van-icon name="arrow" size="15px" color="#CFCFCF" />
+		</view>
+		<view class="center-view">
+			<view class="image-view">
+				<image src="{{'http://qianxiaojiang.sosogo.site/' + orderInfo.goods_info.pics[0]}}"></image>
+			</view>
+			<view class="right-view">
+				<view class='top-view'>
+					<view style="flex: 1">{{orderInfo.service_info.description}}</view>
+					<view class="prices">￥{{orderInfo.goods_info.minPrice}}</view>
+				</view>
+				<view class="bottom-view">
+					<view class='spec'>{{orderInfo.spec}};{{orderInfo.size}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="project-view">
+			<view class="title-view">
+				<view class="left">商品总价</view>
+				<view class="right">¥{{orderInfo.total_price}}</view>
+			</view>
+			<view class="title-view">
+				<view class="left">实付款</view>
+				<view class="right" style="color: #FD9E00;">¥{{orderInfo.amount/100 || 0}}</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 订单信息 -->
+	<view class='order-info-view' wx:if="{{orderType == 0}}">
+		<view class='order-info-view-tit'>订单信息</view>
+
+		<view class='order-info-view-content'>
+			<view class='item'>
+				<text>订单编号 </text>
+				<text>{{orderInfo.goods_order_id}}</text>
+			</view>
+			<view class='item'>
+				<text>创建时间 </text>
+				<text>{{orderInfo.cTime}}</text>
+			</view>
+			<!-- <view class='item'>
+				<text>付款时间 </text>
+				<text>{{orderInfo.payTime}}</text>
+			</view> -->
+		</view>
+	</view>
+	<view class='order-info-view' wx:else>
+		<view class='order-info-view-tit'>订单信息</view>
+
+		<view class='order-info-view-content'>
+			<view class='item'>
+				<text>订单编号 </text>
+				<text>{{orderInfo.service_order_id}}</text>
+			</view>
+			<view class='item'>
+				<text>创建时间 </text>
+				<text>{{orderInfo.sTime}}</text>
+			</view>
+			<!-- <view class='item'>
+				<text>付款时间 </text>
+				<text>{{orderInfo.payTime}}</text>
+			</view> -->
+		</view>
+	</view>
+</view>

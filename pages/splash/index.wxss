@@ -1,0 +1,54 @@
+/* pages/splash/index.wxss */
+
+page {
+  background: #fff;
+}
+
+.enter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.image-view {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 1147rpx;
+}
+.image-view image {
+  width: 100%;
+  height: 100%;
+}
+
+.slogan-title {
+  position: absolute;
+  top: 7vh;
+  font-size: 30px;
+  font-family: zcoolwenyiti;
+  color:rgba(0,0,0,1);
+}
+
+.enter-slogan {
+  position: absolute;
+  top: 13vh;
+  width: 70vw;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular,PingFang SC;
+  font-weight: 400;
+  color:#050505;
+  line-height: 100rpx;
+  letter-spacing: 20rpx;
+}
+.enter-slogan .slogan-right {
+  text-align: right;
+  display: inline-block;
+}

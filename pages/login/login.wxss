@@ -1,0 +1,54 @@
+/* pages/loading/loading.wxss */
+
+page {
+  background: #fff;
+}
+
+.enter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.enter-slogan {
+  position: absolute;
+  bottom: 300rpx;
+  width: 70vw;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular,PingFang SC;
+  font-weight: 400;
+  color:#050505;
+  line-height: 100rpx;
+  letter-spacing: 20rpx;
+}
+.enter-slogan .slogan-right {
+  text-align: right;
+  display: inline-block;
+}
+
+.enter-button {
+  position: absolute;
+  bottom: 175rpx;
+  width: 316rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 30rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  background: #FFAF51 !important;
+  border-radius: 66rpx;
+  text-align: center;
+  letter-spacing: 30rpx;
+  text-indent: 30rpx;
+  padding: 0;
+}

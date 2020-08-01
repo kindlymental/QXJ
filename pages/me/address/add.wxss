@@ -1,0 +1,58 @@
+/* pages/address/add/index.wxss */
+
+.newAddress-container {
+  background-color: white;
+}
+.newAddewss-form{
+  margin: 16rpx 0 0 0;
+}
+.newAddress-container .section {
+  padding: 30rpx;
+  border-bottom: 1px solid #f2f1f1;
+  font-size: 28rpx;
+  color: #A3A3A3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newAddress-container .section image {
+  width: 46rpx;
+  height: 46rpx;
+  margin-right: 10rpx;
+}
+
+
+/** 默认地址 */
+.default-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #000000;
+  padding: 20rpx 32rpx;
+  border-top: 16rpx solid #F6F7FB;
+}
+
+/** 保存 */
+.new-address-view {
+  position: fixed;
+  bottom: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.new-address{
+  width: 690rpx;
+  text-align: center;
+  color: white;
+  font-size: 30rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  background-color: #FD9E00;
+  border-radius: 36rpx;
+}
+
+.name-icon{
+  font-size: 40rpx !important;
+}

@@ -1,0 +1,29 @@
+<!--pages/category/list/index.wxml-->
+
+<import src="../../../template/template-loading.wxml" />
+
+<!-- 导航 -->
+<v-nav-header bind:clickMenu="clickNavMenu"></v-nav-header>
+
+<view class="container" style="{{'margin-top: ' + navigationBarHeight}}">
+	<!-- 分类 -->
+	<scroll-view scroll-y class="menu-container">
+		<block wx:for='{{categoryPageData.list}}' wx:key='index'>
+			<view class="menu-view {{categorySelectedIndex==index ? 'text_selected':'text_normal'}}" bindtap="clickChangeMenu" data-index='{{index}}'>
+				<text>{{item.name}}</text>
+			</view>
+		</block>
+	</scroll-view>
+
+	<!-- 项目列表 -->
+	<scroll-view scroll-y class="project-list">
+		<block wx:for='{{projectPageData.list}}' wx:key='index'>
+			<view id='{{item.goods_id ? item.goods_id : item.service_id}}' data-index='{{index}}' bindtap="eventHandle" class="project-item">
+				<v-project project='{{item}}' />
+			</view>
+		</block>
+	</scroll-view>
+
+	<template is="listNull" data="{{...projectPageData}}"></template>
+
+</view>

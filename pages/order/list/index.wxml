@@ -1,0 +1,27 @@
+<!--pages/order/list/index.wxml-->
+
+<!-- 导航 -->
+<v-nav-header bind:clickMenu="clickNavMenu"></v-nav-header>
+
+<!-- 骨架 -->
+<van-skeleton title avatar row="10" loading="{{ !pageData.loadStatus }}">
+
+	<view class="container" style="{{'margin-top: ' + navigationBarHeight}}">
+		<!-- 菜单 -->
+		<v-order-menu menuList='{{menuTitleList}}' bind:changeMenu="clickChangeMenu"></v-order-menu>
+
+		<!-- 列表 -->
+		<view class="list">
+			<block wx:for='{{pageData.list}}' wx:key='index'>
+				<v-order-item 
+					item='{{item}}' 
+					orderType='{{navSelectedIndex}}' 
+					orderNum='{{item.orderNum}}' 
+					bind:toOrderDetail="toOrderDetail"
+					bind:toLogistics="toLogistics"
+					bind:toConfirm="toConfirm"
+				></v-order-item>
+			</block>
+		</view>
+	</view>
+</van-skeleton>

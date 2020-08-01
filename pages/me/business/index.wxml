@@ -1,0 +1,16 @@
+<!--pages/me/business/index.wxml-->
+
+<view class="panel">
+  <van-row custom-class="content" wx:for="{{list}}" wx:key="{{item.code}}">
+    <van-col span="5" class="icon">
+     <image src="{{item.img}}"></image>
+    </van-col>
+    <van-col span="13" class="info">
+      <view class="info-name">{{item.name}}</view>
+      <view class="info-describe">{{item.describe}}</view>
+    </van-col>
+    <van-col span="6">
+      <view class="btn" wx:if="{{item.btn}}">立即申请</view>
+    </van-col>
+</van-row>
+</view>

@@ -1,0 +1,12 @@
+/* pages/me/phone/index.wxss */
+.title {
+  font-size:21px !important;
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+}
+.label {
+  font-size:15px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color: #A6A6A6;
+}

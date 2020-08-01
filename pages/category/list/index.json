@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "v-nav-header": "/components/navbar/index",
+    "v-project": "/components/project/item/index"
+  },
+  "navigationBarTitleText": "分类"
+}

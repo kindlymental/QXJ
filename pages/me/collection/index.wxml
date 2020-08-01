@@ -1,0 +1,18 @@
+<!--pages/me/collection/index.wxml-->
+<view class="content">
+  <van-card
+    wx:for="{{pageData.list}}"
+    wx:key="id"
+    price="{{item.price}}"
+    desc="{{item.desc}}"
+    title="{{item.name}}"
+    thumb="{{ item.pics[0] }}"
+    custom-class="card"
+    thumb-class="card-thumb"
+    title-class="card-title"
+    desc-class="card-desc"
+    price-class="card-price"
+  />
+<view class="nullText" wx:if="{{pageData.list.length===0}}">您还没有收藏商品哦~</view>
+</view>
+

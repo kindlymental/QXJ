@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商务合作",
+  "usingComponents": {
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
+  }
+}

@@ -1,0 +1,157 @@
+<!--pages/order/detail/index.wxml-->
+<view class="container">
+	<!-- 订单状态 -->
+	<view class="order-state-view">
+		<view class="left-view">
+			<view class="state ellipise">{{orderInfo.tips}}</view>
+			<view class="remark" wx:if="{{orderInfo.status == 0 || orderInfo.servicesStatus == 0}}">还剩{{remaintime}}</view>
+		</view>
+		<view class="image-view">
+			<image src="/assets/image/rider.png"></image>
+		</view>
+	</view>
+
+	<!-- 订单信息 -->
+	<v-order-detail orderInfo='{{orderInfo}}' orderType="{{orderType}}" />
+
+	<!-- 操作信息 -->
+	<view class="operation-view" wx:if="{{orderType == 1}}">
+		<view
+			class="button" 
+			bindtap='concatkefu'
+			wx:if="{{orderInfo.servicesStatus == 2 || orderInfo.servicesStatus == 4 || orderInfo.servicesStatus == 5 || orderInfo.servicesStatus == 6 || orderInfo.servicesStatus == 7 || orderInfo.servicesStatus == 11 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>联系客服</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='finshOrder'
+			wx:if="{{orderInfo.servicesStatus == 6 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>确认完工</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='shouhou'
+			wx:if="{{orderInfo.servicesStatus == 7 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>申请售后</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='finishshouhou'
+			wx:if="{{ orderInfo.servicesStatus == 11 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>售后完成</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='conactPersonkefu'
+			wx:if="{{orderInfo.servicesStatus == 2 || orderInfo.servicesStatus == 4 || orderInfo.servicesStatus == 5 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>拨打人工电话</text>
+		</view>
+		<!-- <view class="horizon-line">|</view> -->
+		<view 
+			class="button" 
+			bindtap='toCancelOrder' 
+			wx:if="{{orderInfo.servicesStatus == 0 || orderInfo.servicesStatus == 1 || orderInfo.servicesStatus == 2 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>取消订单</text>
+		</view>
+		<!-- <view class="horizon-line">|</view> -->
+		<view 
+			class="button" 
+			disabled='{{orderStatus}}' 
+			bindtap='toPaymentOrder' 
+			wx:if="{{orderInfo.servicesStatus == 0 || orderInfo.servicesStatus == 5 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>立即支付</text>
+		</view>
+	</view>
+	<view class="operation-view" wx:else>
+		<view
+			class="button" 
+			bindtap='concatkefu'
+			wx:if="{{orderInfo.status == 0 || orderInfo.status == 1 || orderInfo.status == 2 || orderInfo.status == 3 || orderInfo.status == 8 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>联系客服</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='toLogistics'
+			wx:if="{{orderInfo.status == 6 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>查看物流</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='shouhou'
+			wx:if="{{ orderInfo.status == 3 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>申请售后</text>
+		</view>
+		<view
+			class="button" 
+			bindtap='finishshouhou'
+			wx:if="{{ orderInfo.status == 8 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>售后完成</text>
+		</view>
+		<!-- <view class="horizon-line">|</view> -->
+		<view 
+			class="button" 
+			bindtap='toCancelOrder' 
+			wx:if="{{orderInfo.status == 0 || orderInfo.status == 1 || orderInfo.status == 2 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>取消订单</text>
+		</view>
+		<!-- <view class="horizon-line">|</view> -->
+		<view 
+			class="button" 
+			disabled='{{orderStatus}}' 
+			bindtap='toPaymentOrder' 
+			wx:if="{{orderInfo.status == 0 }}"
+		>
+			<image src="/assets/image/fenpei.png"></image>
+			<text>立即支付</text>
+		</view>
+	</view>
+	<!-- 填写快递信息 -->
+	<!-- <view class="recommend-view" style="padding-bottom: 20rpx;">
+		<view class="recommend-title">填写快递信息</view>
+		<view class="delivery-view">
+			<view style="margin-bottom: 16rpx;">
+				<input name='deliveryName' placeholder="某某快递" value='{{deliveryName}}' />
+			</view>
+			<view>
+				<input name='deliveryNum' placeholder="请输入快递单号" value='{{deliveryNum}}' />
+			</view>
+		</view>
+	</view> -->
+
+	<!-- 猜你喜欢 -->
+	<!-- <view class="recommend-view">
+		<view class="recommend-title">猜你还喜欢</view>
+		<view class="project-list">
+			<block wx:for="{{projectList}}" wx:key="index">
+				<view class="item" bindtap="recommendEventHandle" id='{{item.id}}'>
+					<v-grid-item project='{{item}}' />
+				</view>
+			</block>
+		</view>
+	</view> -->
+
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-grid-item": "/components/project/grid_item/index",
+	"van-icon": "@vant/weapp/icon/index",
+	"van-action-sheet": "@vant/weapp/action-sheet/index"
+  }
+}

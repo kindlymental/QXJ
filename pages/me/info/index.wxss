@@ -1,0 +1,41 @@
+.panel {
+  background-color: #F6F7FB;
+}
+
+.van-row {
+  background: #fff;
+  border-bottom: 2rpx solid #D8D8D8;
+  line-height: 100rpx;
+}
+
+.avatar-info {
+  font-size:17px;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+  color: #4D4D4D;
+  text-align: center;
+}
+
+.info-text {
+  line-height: 140rpx;
+}
+
+.avatar {
+  height: 100rpx!important;
+}
+
+.avatar-img{
+  text-align: center;
+}
+
+.avatar-img image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 20rpx;
+}
+
+.avatar-desc {
+  font-size: 17px;
+  text-align: center;
+  color: #A3A3A3;
+}

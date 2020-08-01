@@ -1,0 +1,88 @@
+<view class="home-container">
+
+    <van-cell-group>
+        <van-field value="{{ sms }}" center clearable left-icon="search" custom-style="border-radius: 66rpx;width: 93vw;height: 66rpx;margin: 0 3.5vw 30rpx 3.5vw;border: 1px solid #ED9E00;" placeholder="请输入您想找的商品、服务" use-button-slot>
+            <van-button slot="button" size="small" custom-style="position: absolute;top: -1rpx;right: -1rpx;height: 66rpx;background: #FD9E00;color: #fff;border-radius: 0px 17px 17px 0px;">
+                搜索
+            </van-button>
+        </van-field>
+    </van-cell-group>
+
+    <!-- banner -->
+    <view>
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{banners}}" wx:key="index">
+                <swiper-item>
+                    <image
+						src="{{'http://qianxiaojiang.sosogo.site/' + item.pics[0]}}" 
+						class="slide-image" 
+						bindtap="godetail"
+						data-id="{{item.goods_id}}"
+						mode="aspectFill" />
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+
+    <view class="scroll-product">
+        <view class="scroll-title">
+            <text class="title-name">商品推荐</text>
+            <text class="title-more"> 查看更多</text>
+        </view>
+        <van-grid column-num="2" gutter="{{ 10 }}">
+            <van-grid-item 
+				use-slot 
+				wx:for="{{goodsRecommend}}" 
+				data-id="{{item.goods_id}}"
+				wx:key='index' 
+				bindtap="godetail"
+			>
+                <image style="width: 100%; height: 90px;" src="{{'http://qianxiaojiang.sosogo.site/' + item.pics[0]}}" mode="aspectFill" />
+                <view class="product-name">{{item.name}}</view>
+                <view class="product-info">
+                    <text class="info-unit">¥</text>
+                    <text class="info-price">{{item.minPrice}}</text>
+                    <text class="info-buy">{{item.sell_count}}人已付款</text>
+                    <van-icon name="weapp-nav" custom-style="color:#BBBBBB;margin-left: 70rpx" />
+                </view>
+            </van-grid-item>
+        </van-grid>
+    </view>
+	<view class="scroll-serve">
+        <view class="scroll-title">
+            <text class="title-name">服务套餐</text>
+        </view>
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+            <view id="demo1" class="scroll-view-item_H demo" wx:for="{{ serveList }}" wx:key="index">
+                <image style="width: 100%;height:100%" src="{{item.img}}" mode="aspectFill"/>
+                <view class="item-title">{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="scroll-product">
+        <view class="scroll-title">
+            <text class="title-name">商品</text>
+            <text class="title-more"> 查看更多</text>
+        </view>
+        <van-grid column-num="2" gutter="{{ 10 }}">
+            <van-grid-item 
+				use-slot 
+				wx:for="{{goods}}" 
+				data-id="{{item.goods_id}}"
+				wx:key='index' 
+				bindtap="godetail"
+			>
+                <image style="width: 100%; height: 90px;" src="{{'http://qianxiaojiang.sosogo.site/' + item.pics[0]}}" mode="aspectFill" />
+                <view class="product-name">{{item.name}}</view>
+                <view class="product-info">
+                    <text class="info-unit">¥</text>
+                    <text class="info-price">{{item.minPrice}}</text>
+                    <text class="info-buy">{{item.sell_count}}人已付款</text>
+                    <van-icon name="weapp-nav" custom-style="color:#BBBBBB;margin-left: 70rpx" />
+                </view>
+            </van-grid-item>
+        </van-grid>
+    </view>
+
+    
+</view>

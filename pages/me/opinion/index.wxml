@@ -1,0 +1,2 @@
+<!--pages/me/opinion/index.wxml-->
+<text bindtap="didPressChooseImage">上传</text>

@@ -1,0 +1,44 @@
+<!--pages/user/info/center/index.wxml-->
+
+<view class="container">
+
+  <view class='friends-item'  wx:if='{{!user.nickName}}'>
+    <view class='friends-item-left'>
+      <image src='../../assets/icon/tabbar_me.png'></image>
+    </view>
+    <view class='friends-item-right'>
+      <view class='friends-name' bindtap="toLogin">登录/注册</view>
+    </view>
+  </view>
+
+  <view class='friends-item' bindtap="toPage" data-code="info" wx:if='{{user.nickName}}'>
+    <view class='friends-item-left'>
+      <image src='{{user.avatarUrl}}'></image>
+    </view>
+    <view class='friends-item-right'>
+      <view class='friends-name'>{{user.nickName}}</view>
+      <view class='friends-phone'>{{user.storeName}}</view>
+    </view>
+    <view class='member-view' bindtap="toMember">购买套餐</view>
+  </view>
+
+  <view class="info-view">
+    <view
+      class="info-item"
+      wx:for="{{pageList}}"
+      wx:key="code"
+      bindtap="toPage"
+     data-code="{{item.code}}"
+    >
+      <image src="{{item.img}}"/>
+      <view class="title">{{item.name}}</view>
+      <view class="goIcon">
+        <van-icon name="arrow" color="#C8C8C8" /> 
+      </view>
+    </view>
+    <!-- <view class="logout-view" bindtap="logoutClick">
+      退出登录
+    </view> -->
+  </view>
+
+</view>

@@ -1,0 +1,29 @@
+/* template/template-loading.wxss */
+
+.tips {
+    font-size: 18px;
+    text-align: center;
+    padding: 50px;
+    color: #ccc;
+    font-weight:100;
+}
+
+.tips image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.tips image,
+.tips text {
+    vertical-align: middle;
+}
+
+.hide {
+    display:none!important;
+}
+
+.show {
+    display:block;
+}
+

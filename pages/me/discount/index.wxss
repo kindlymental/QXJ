@@ -1,0 +1,59 @@
+/* pages/me/discount/index.wxss */
+page{
+  background: #fff;
+  height: 100vh;
+}
+
+.content{
+  width:90vw;
+  margin: 0 auto;
+  height:150rpx;
+  background-color: #FFF6F6;
+  border-radius: 8rpx;
+  color: #FF0404;
+  margin-bottom: 20rpx;
+}
+
+.price {
+  font-family:PingFangSC-Semibold,PingFang SC;
+  font-weight:600;
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+}
+.price .unit {
+  display: inline-block;
+  font-size: 18px;
+}
+
+.price .num{
+  display: inline-block;
+  font-size: 23px;
+}
+
+.info {
+  margin-top: 20rpx;
+}
+
+.info-name{
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 40rpx;
+}
+
+.info-date {
+  font-size:13px;
+  font-weight:400;
+}
+
+.btn {
+  width:116rpx;
+  height:50rpx;
+  border-radius:25rpx;
+  border:1px solid #FF0404;
+  font-size:15px;
+  font-weight:400;
+  text-align: center;
+  line-height: 50rpx;
+  margin:50rpx auto;
+}

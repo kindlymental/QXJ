@@ -1,0 +1,94 @@
+/* pages/index/index.wxss */
+swiper{
+  height: 265rpx;
+  margin: 0rpx 30rpx;
+}
+.slide-image {
+  width: 100%;
+  height: 265rpx;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:#F6F7FB;
+  font-family:PingFangSC-Regular,PingFang SC;
+  font-weight:400;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.scroll-product {
+  height: 100%;
+  margin-top: 16rpx;
+}
+
+.scroll-title {
+  padding: 10px 0;
+}
+
+.scroll-title .title-name {
+  font-size:25px;
+  font-family:PingFangSC-Medium,PingFang SC;
+  font-weight:500;
+  margin-left: 33rpx;
+}
+
+.scroll-title .title-more {
+  float: right;
+  margin-right: 33rpx;
+  line-height: 79rpx;
+  font-size:  24rpx;
+  color:#BBBBBB;
+}
+.product-name{
+  width: 100%;
+  padding: 15rpx 20rpx;
+  font-size:25rpx;
+  color:#000000;
+  line-height:20px;
+}
+.product-info{
+  width: 100%;
+  padding-left: 20rpx;
+}
+.info-unit{
+  font-size:24rpx;
+  color:#FDA108;
+}
+.info-price{
+  font-size:32rpx;
+  color:#FDA108;
+}
+.info-buy{
+  font-size:24rpx;
+  color:#BBBBBB;
+  margin-left: 10rpx;
+}
+
+.scroll-view_H{         
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 320rpx;
+  height: 180rpx;
+  margin-left: 33rpx;
+}
+
+.item-title {
+  position: relative;
+  top:-110rpx;
+  left: 110rpx;
+  width: 100rpx;
+  font-size: 28rpx;
+  color: #fFF;
+  z-index:999;
+}
